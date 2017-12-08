@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>대한민국 1등 카셰어링 쏘카</title>
+    <!-- 이미지 슬라이드 플로그인 css 참조 -->
+    <link rel="stylesheet" href="css/superslides.css">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #header-wrapper {
+        border-top: 4px solid #00d2ff;
+        border-bottom: 1px solid #e4e4e4;
+    }
+
+    #header {
+        position: relative;
+        margin: 0 auto;
+        padding-top: 26px;
+        width: 984px;
+        height: 44px;
+    }
+
+    #header h1 {
+        position: absolute;
+        margin-top: -15px;
+        left: 0;
+    }
+
+    #header a img {
+        border: 0 solid transparent;
+    }
+
+    ul.gnb {
+        margin-left: 117px;
+        header: 18px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .gnb li {
+        float: left;
+        margin-right: 20px;
+    }
+
+    .gnb li .gnb1 {
+        width: 55px;
+        background-position: 5px 5px;
+    }
+
+    .gnb li .gnb2 {
+        width: 44px;
+        background-position: -80px 5px;
+    }
+
+    .gnb li .gnb3 {
+        width: 73px;
+        background-position: -154px 5px;
+    }
+
+    .gnb li .gnb4 {
+        width: 44px;
+        background-position: -257px 5px;
+    }
+
+    .gnb li .gnb5 {
+        width: 54px;
+        background-position: -331px 5px;
+    }
+
+    .gnb li .gnb6 {
+        width: 76px;
+        background-position: -411px 5px;
+    }
+
+    .gnb li a {
+        display: block;
+        padding: 5px;
+        height: 12px;
+        overflow: hidden;
+        text-indent: -9999em;
+        background: url(img/header_gnb.png) no-repeat;
+        background-size: 497px 12px;
+    }
+
+    .util {
+        position: absolute;
+        top: 21px;
+        right: 0;
+    }
+
+    .util .hi-seoul {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .util ul {
+        float: left;
+        position: relative;
+        top: 2px;
+    }
+
+    .util ul li {
+        float: left;
+    }
+
+    .util ul li a {
+        display: block;
+        height: 27px;
+        overflow: hidden;
+        text-indent: -9999em;
+        background: url(img/header_util.gif) no-repeat;
+    }
+
+    .util ul li .util1 {
+        width: 56px;
+        background-position: 0 0;
+    }
+
+    .util ul li .util2 {
+        width: 66px;
+        background-position: -56px 0;
+    }
+    /** 이미지 슬라드 --> 슬라이드 영역의 크기, 여기서 설정한 크기 만큼 슬라이드가 표시된다. */
+
+    #slide-container {
+        width: 100%;
+        height: 450px;
+    }
+
+    /** 슬라이드 버튼 */
+    .next {
+        margin-right: 10px;
+        padding: 21px;
+        display: block;
+        text-indent: -9999em;
+        background: url(img/next.svg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .prev {
+        margin-left: 10px;
+        padding: 21px;
+        display: block;
+        text-indent: -9999em;
+        background: url(img/previous.svg) no-repeat;
+    }
+    /** //슬라이드 버튼 */
+
+    #container {
+        width: 1004px;
+        margin: 0 auto;
+    }
+
+    #content {
+        padding: 0 0 90px;
+        position: relative;
+    }
+
+    #visual {
+        position: relative;
+        margin-bottom: 47px;
+        height: 440px;
+    }
+
+    .clsBannerScreen {
+        position: relative;
+        height: 440px;
+        width: 1004px;
+        overflow: hidden;
+    }
+
+    #visual .clsBannerButton {
+        position: absolute;
+        top: 413px;
+        left: 2px;
+    }
+
+    #visual .clsBannerButton li {
+        float: left;
+        padding: 0 8px;
+        width: 234px;
+        cursor: pointer;
+    }
+
+    #visual .clsBannerButton li span {
+        display: block;
+        width: 234px;
+        height: 26px;
+        text-indent: -9999em;
+        overflow: hidden;
+        background: url(img/visual_pointer_160322.png) no-repeat;
+    }
+
+    #visual .clsBannerButton li .vis3 {
+        background-position: -500px -30px;
+    }
+
+    #visual .clsBannerButton li .vis2 {
+        background-position: -250px 0;
+    }
+
+    #visual .clsBannerButton li .vis1 {
+        background-position: 0 0;
+    }
+
+    #visual .clsBannerButton li .vis4 {
+        background-position: -750px 0;
+    }
+
+    /** 회원 가입하기 */
+    .loginBox {
+        position: absolute;
+        top: 28px;
+        right: 9px;
+        padding-top: 17px;
+        width: 228px;
+        height: 103px;
+        background: url(img/right_login_bg.gif) no-repeat left top;
+    }
+
+    .loginBox .txt {
+        margin: 0 0 13px 16px;
+    }
+
+    .loginBox .btn {
+        text-align: center;
+    }
+    /** //회원 가입하기 */
+
+    /** 배너 */
+    .banner01 {
+        position: absolute;
+        top: 151px;
+        right: 10px;
+    }
+
+    .banner02 {
+        position: absolute;
+        top: 242px;
+        right: 10px;
+    }
+
+    .banner03 {
+        position: absolute;
+        top: 321px;
+        right: 10px;
+    }
+    /** //배너 */
+
+    /** 쏘카둘러보기 */
+    .rule {
+        position: relative;
+        margin: 47px 0 0 10px;
+        width: 684px;
+    }
+
+    .rule .tab::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .rule .tab li {
+        float: left;
+    }
+
+    .rule .tab li a {
+        display: block;
+        padding: 3px 0;
+        height: 13px;
+        text-indent: -9999em;
+        overflow: hidden;
+        background: url(img/rule_tab_141227.png) no-repeat;
+    }
+
+    .rule .tab li .tab1 {
+        width: 82px;
+        background-position: 0 -20px;
+    }
+
+    .rule .tab li .tab2 {
+        width: 80px;
+        background-position: -82px 0;
+    }
+    /** //쏘카둘러보기 */
+
+    /** 이용방법 전체설정 */
+    .rule .rule1 {
+        margin: 20px 0 0 0;
+        height: 112px;
+    }
+
+    .rule .rule1 .list_rule {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        width: 740px;
+        left: -28px;
+    }
+
+    .rule .rule1 .list_rule li {
+        float: left;
+        width: 20%;
+    }
+
+    .rule .rule1 .list_rule li a {
+        display: block;
+        width: 112px;
+        height: 112px;
+        margin: 0 auto;
+        background: url(img/btn_rule_150922.png) no-repeat;
+    }
+    
+    /** 이용방법 마우스오버 */
+    .rule .rule1 .list_rule li .btn1 {
+        background-position: -2px -1px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn1:hover {
+        background-position: -121px -1px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn2 {
+        background-position: -2px -121px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn2:hover {
+        background-position: -121px -121px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn3 {
+        background-position: -2px -241px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn3:hover {
+        background-position: -121px -241px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn4 {
+        background-position: -2px -361px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn4:hover {
+        background-position: -121px -361px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn5 {
+        background-position: -2px -481px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .rule .rule1 .list_rule li .btn5:hover {
+        background-position: -121px -481px;
+        width: 110px;
+        height: 110px;
+    }
+    /** //이용방법 전체설정 */
+    /** //이용방법 마우스오버 */
+
+    .notice {
+        position: absolute;
+        top: 487px;
+        right: 10px;
+        width: 234px;
+    }
+
+    .notice .tab {
+        margin-bottom: 22px;
+    }
+
+    .notice .tab::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .notice .tab li {
+        float: left;
+    }
+
+    .notice .tab li a {
+        display: block;
+        padding: 3px 0;
+        height: 13px;
+        text-indent: -9999em;
+        overflow: hidden;
+        background: url(img/notice_tab.png) no-repeat;
+    }
+
+    .notice .tab li .tab1{
+        width: 55px;
+        background-position: 0 -20px;
+    }
+
+    .notice .tab li .tab2{
+        width: 81px;
+        background-position: -55px 0;
+    }
+
+    .notice .more {
+        position: absolute;
+        top: -2px;
+        right: 0;
+        text-decoration: none;
+        color: #7f7f7f;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    #footer {
+        position: relative;
+        padding: 25px 0 70px;
+        width: 100%;
+        background: #454b55 url(img/footer_bg.gif) repeat-x left top;
+    }
+
+    #footer .gr {
+        position: relative;
+        margin: 0 auto;
+        width: 984px;
+    }
+
+    #footer .gr .footer-menu {
+        padding-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    #footer .gr .footer-menu::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    #footer .gr .footer-menu li {
+        float: left;
+    }
+
+    #footer .gr .footer-menu a {
+        margin: 10px;
+        font-size: 12px;
+        text-decoration: none;
+        color: #eaeaea;
+    }
+
+    #footer .gr .sns {
+        position: absolute;
+        right: 50%;
+        margin-right: -492px;
+        margin-top: -35px;
+    }
+
+    #footer .gr .sns li {
+        float: left;
+    }
+
+    #footer .gr .sns a {
+        display: block;
+        padding: 3px 0;
+        width: 16px;
+        margin: 0 15px 0 0;
+        text-indent: -9999em;
+        background: url(img/footer_sns.png) no-repeat;
+    }
+
+    #footer .gr .sns .sns1 {
+        background-position: -35px 3px;
+    }
+
+    #footer .gr .sns .sns2 {
+        background-position: -74px 3px;
+    }
+
+    #footer .gr .sns .sns3 {
+        background-position: -112px 3px;
+    }
+
+    #address .txt-address {
+        margin: 10px;
+        font-size: 12px;
+        color: #8e9298;
+    }
+
+    #address .txt-address a {
+        text-decoration: none;
+        color: #8e9298;
+    }
+
+    #eco-mark li {
+        float: right;
+    }
+
+    #eco-mark .ccm {
+        display: block;
+        padding: 50px 10px 10px 50px;
+        margin-left: -260px;
+        margin-top: -5px;
+        background: url(img/ccm.png) no-repeat;
+    }
+
+    #eco-mark .eco {
+        display: block;
+        padding: 50px 0 10px 50px;
+        margin-left: -188px;
+        margin-top: -8px;
+        background: url(img/eco.png) no-repeat;
+    }
+
+    #eco-mark .baorp {
+        display: block;
+        padding: 50px 0 10px 50px;
+        margin-left: -125px;
+        margin-top: -8px;
+        background: url(img/bcorp.jpg) no-repeat;
+    }
+
+    #eco-mark .csa {
+        display: block;
+        padding: 50px 20px 5px 50px;
+        background: url(img/csa.png) no-repeat;
+    }
+
+    .add_item {
+        margin: 10px;
+        padding-top: 35px;
+        color: #8e9298;
+        font-size: 13px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 메뉴바 -->
+    <div id="header-wrapper">
+        <div id="header">
+            <h1>
+                <a href="#">
+                    <img width="80px"; src="img/header_logo.png" alt="SOCAR">
+                </a>
+            </h1>
+            <ul class="gnb">
+                <li><a href="#" class="gnb1" title="서비스안내">서비스 안내</a></li>
+                <li><a href="#" class="gnb2" title="요금안내">요금 안내</a></li>
+                <li><a href="#" class="gnb3" title="법인/단체안내">법인/단체 안내</a></li>
+                <li><a href="#" class="gnb4" title="고객센터">고객센터</a></li>
+                <li><a href="#" class="gnb5" title="마이페이지">마이페이지</a></li>
+                <li><a href="#" class="gnb6" title="쏘카찾기·예약">쏘카 찾기·예약</a></li>
+            </ul>
+            <div class="util">
+                <p class="hi-seoul">
+                    <a href="#">
+                        <img src="img/header_car_sharing_n.gif" alt="공유서울 나눔카">
+                    </a>
+                </p>
+                <ul>
+                    <li><a href="" class="util1" title="로그인">로그인</a></li>
+                    <li><a href="" class="util2" title="회원가입">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 이미지 슬라이드 -->
+    <div id="slide-container">
+        <div class="slides">
+            <ul class="slides-container">
+                <li><img src="img/tvc_banner_1.jpg" alt="메인1"></li>
+                <li><img src="img/tvc_banner_2.jpg" alt="메인2"></li>
+                <li><img src="img/tvc_banner_3.jpg" alt="메인3"></li>
+                <li><img src="img/tvc_banner_4.jpg" alt="메인4"></li>
+            </ul>
+            <!-- 좌우 이동 버튼 -->
+            <nav class="slides-navigation">
+                <a href="#" class="next">Next</a>
+                <a href="#" class="prev">Previous</a>
+            </nav>
+        </div>
+    </div>
+    <!-- 중간 -->
+    <div id="container">
+        <div id="content">
+            <!-- 중간 이미지 -->
+            <div id="visual">
+                <div class="clsBannerScreen">
+                    <div class="images"> <img src="img/visual1_170719.png"> </div>
+                </div>
+                <ul class="clsBannerButton">
+                    <li>
+                        <span class="vis3" data-img-src="img/visual1_170719.png">SMART SERVICE</span>
+                    </li>
+                    <li>
+                        <span class="vis2" data-img-src="img/visual2_160322.png">SMART PRICE</span>
+                    </li>
+                    <li>
+                        <span class="vis1" data-img-src="img/visual3_160322.png">SMART SOCAR</span>
+                    </li>
+                    <li>
+                        <span class="vis4" data-img-src="img/visual4_160322.png">SMART MEMBERSHIP</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 로그인 전 : 회원가입 -->
+            <div class="loginBox">
+                <div class="group">
+                    <p class="txt">
+                        <img src="img/right_login_txt1_three_hours.png" alt="즐거운 드라이브 라이프의 시작 가입하면 첫사용 무료! 타면된다 쏘카!">
+                    </p>
+                    <p class="btn">
+                        <a href="#">
+                            <img src="img/btn_join.png" alt="회원가입하기">
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- //로그인 전 : 회원가입 -->
+            <!-- 배너 -->
+            <div class="banner01">
+                <a href="#">
+                    <img src="img/banner_person.png" alt="업무용 카셰어링">
+                </a>
+            </div>
+            <div class="banner02">
+                <a href="#">
+                    <img src="img/banner_2.png" alt="내가고른차">
+                </a>
+            </div>
+            <div class="banner03">
+                <a href="#">
+                    <img src="img/banner03.png" alt="업무용 카셰어링">
+                </a>
+            </div>
+            <!-- //배너 -->
+
+            <div class="rule">
+                <!-- 쏘카 둘러보기&이용규칙 -->
+                <ul class="tab">
+                    <li class="on">
+                        <a href="#" class="tab1">쏘카 둘러보기</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tab2">쏘카 이용규칙</a>
+                    </li>
+                </ul>
+                <!-- //쏘카 둘러보기&이용규칙 -->
+
+                <!-- 이용방법 -->
+                <div class="rule1">
+                    <ul class="list_rule">
+                        <li>
+                            <a href="#" class="btn1"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn2"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn3"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn4"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn5"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //이용방법 -->
+            </div>
+            <!-- //rule -->
+            <div class="notice">
+                <ul class="tab">
+                    <li class="on">
+                        <a href="#" class="tab1">공지사항</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tab2">자주묻는 질문</a>
+                    </li>
+                </ul>
+                <a href="#" class="more">더보기</a>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div id="footer">
+        <!-- gr -->
+        <div class="gr">
+            <!-- 회사소개...등등등.. -->
+            <ul class="footer-menu">
+                <li>
+                    <a href="#" title="회사소개">회사소개</a>
+                </li>
+                <li>
+                    <a href="#" title="채용안내">채용안내</a>
+                </li>
+                <li>
+                    <a href="#" title="보도자료">보도자료</a>
+                </li>
+                <li>
+                    <a href="#" title="회원이용약관">회원이용약관</a>
+                </li>
+                <li>
+                    <a href="#" title="개인정보처리방침">개인정보처리방침</a>
+                </li>
+                <li>
+                    <a href="#" title="자동차대여약관">자동차대여약관</a>
+                </li>
+                <li>
+                    <a href="#" title="위치기반서비스 이용약관">위치기반서비스 이용약관</a>
+                </li>
+            </ul>
+            <!-- //회사소개...등등등.. -->
+            
+            <!-- SNS 아이콘 -->
+            <ul class="sns">
+                <li><a href="#" class="sns1" title="SOCAR Facebook">SOCAR Facebook</a></li>
+                <li><a href="#" class="sns2" title="SOCAR Blog">SOCAR Blog</a></li>
+                <li><a href="#" class="sns3" title="E-mail">E-mail</a></li>
+            </ul>
+            <!-- //SNS 아이콘 -->
+            
+            <!-- address -->
+            <div id="address">
+                <p class="txt-address">
+                    (주) 쏘카 통신판매업 신고 : 제 2016-제주연동-0054호, 정보보호 담당자 : 김명훈, 사업자등록번호 : 616-81-90529, 대표자 : 조정열
+                    <br />
+                    TEL : 1661-3315, FAX : 02-6969-9333, 주소 : 제주특별자치도 제주시 도령도 129, 5층 (연동, 드림플라자) 63126, <a href="#">사업자정보확인</a>
+                    <br />
+                    제휴문의 : <a href="#">hello@socae.kr</a>, 취재문의 : <a href="#">pr@socar.kr</a>, 법인 쏘카존 개설문의 : <a href="#">infra@socar.kr</a>
+                </p>
+            </div>
+            <!-- //address -->
+            
+            <!-- eco-mark -->
+            <ul id="eco-mark">
+                <li><a href="#" class="ccm"></a></li>
+                <li><a href="#" class="eco"></a></li>
+                <li><a href="#" class="baorp"></a></li>
+                <li><a href="#" class="csa"></a></li>
+            </ul>
+            <!-- //eco-mark -->
+
+            <address>
+                <p class="add_item">
+                    Copyright &copy; 2013 SOCAR ALL rights reserved.
+                </p>
+            </address>
+        </div>
+        <!-- //gr -->
+    </div>
+    <!-- //footer -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- 이미지 슬라이드 플로그인 js 참조 -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.superslides.min.js"></script>
+    <script type="text/javascript">
+    /** 이미지 슬라이드 */
+    $(function() {
+        /** '#slides'요소에 대해 플로그인 적용 */
+        $('.slides').superslides({
+            inherit_width_from: '#slide-container',
+            inherit_height_from: '#slide-container',
+            play: 6000,
+            animation: 'slide'
+        });
+    });
+
+     $(function () {
+            $('.clsBannerButton span').click(function (e) {
+                var img = $(this).attr('data-img-src');
+                $(".clsBannerScreen img").attr('src', img);
+            });
+        });
+    </script>
+</body>
+
+</html>
